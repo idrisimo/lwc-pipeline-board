@@ -1,0 +1,70 @@
+<template>
+    <lightning-card title="Pipeline Board" icon-name="standard:opportunity">
+        <div
+            class="slds-grid slds-wrap slds-grid_vertical-align-end slds-p-horizontal_medium filters"
+        >
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4 slds-p-right_small">
+                <lightning-combobox
+                    class="owner-filter"
+                    label="Owner"
+                    value={ownerFilter}
+                    options={ownerOptions}
+                    onchange={handleOwnerChange}
+                ></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-6 slds-p-right_small">
+                <lightning-input
+                    class="from-filter"
+                    type="date"
+                    label="Close date from"
+                    onchange={handleFromChange}
+                ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-6 slds-p-right_small">
+                <lightning-input
+                    class="to-filter"
+                    type="date"
+                    label="Close date to"
+                    onchange={handleToChange}
+                ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                <lightning-input
+                    class="search-filter"
+                    type="search"
+                    label="Search"
+                    placeholder="Opportunity or account name"
+                    onchange={handleSearchChange}
+                ></lightning-input>
+            </div>
+        </div>
+
+        <template lwc:if={loadError}>
+            <div class="slds-p-around_medium slds-text-color_error load-error" role="alert">
+                {loadError}
+            </div>
+        </template>
+
+        <template lwc:if={isLoading}>
+            <div class="slds-is-relative slds-p-around_xx-large">
+                <lightning-spinner
+                    alternative-text="Loading pipeline"
+                    size="small"
+                ></lightning-spinner>
+            </div>
+        </template>
+
+        <div class="slds-p-around_medium board">
+            <template for:each={columns} for:item="col">
+                <c-pipeline-column
+                    key={col.stage}
+                    stage={col.stage}
+                    cards={col.cards}
+                    max-cards={maxCards}
+                    oncardmove={handleCardMove}
+                    oncardselect={handleCardSelect}
+                ></c-pipeline-column>
+            </template>
+        </div>
+    </lightning-card>
+</template>

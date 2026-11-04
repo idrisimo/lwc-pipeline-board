@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Prettier check
+        run: npm run prettier:verify
+      - name: Jest with coverage
+        run: npm run test:unit:coverage
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage
+
+  # Optional: run Apex tests on a scratch org. Requires a Dev Hub and the secret
+  # SFDX_AUTH_URL (output of `sf org display --verbose --json` -> sfdxAuthUrl for the Dev Hub).
+  # apex-tests:
+  #   runs-on: ubuntu-latest
+  #   needs: lint-and-test
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 22
+  #     - run: npm install --global @salesforce/cli
+  #     - name: Authenticate Dev Hub
+  #       run: |
+  #         echo "${{ secrets.SFDX_AUTH_URL }}" > authurl.txt
+  #         sf org login sfdx-url --sfdx-url-file authurl.txt --alias devhub --set-default-dev-hub
+  #         rm authurl.txt
+  #     - name: Create scratch org
+  #       run: sf org create scratch --definition-file config/project-scratch-def.json --alias ci --duration-days 1 --set-default
+  #     - name: Deploy source
+  #       run: sf project deploy start
+  #     - name: Run Apex tests
+  #       run: sf apex run test --test-level RunLocalTests --code-coverage --result-format human --wait 20
+  #     - name: Delete scratch org
+  #       if: always()
+  #       run: sf org delete scratch --no-prompt

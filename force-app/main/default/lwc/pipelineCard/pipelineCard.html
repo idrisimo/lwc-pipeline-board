@@ -1,0 +1,42 @@
+<template>
+    <div
+        class="slds-box slds-box_x-small slds-theme_default card"
+        role="button"
+        tabindex="0"
+        draggable="true"
+        data-id={recordId}
+        onclick={handleClick}
+        onkeydown={handleKeyDown}
+        ondragstart={handleDragStart}
+        ondragend={handleDragEnd}
+    >
+        <p class="slds-text-heading_small slds-truncate card-name" title={name}>{name}</p>
+        <p class="slds-text-body_small slds-text-color_weak slds-truncate account-name">
+            {accountName}
+        </p>
+        <div class="slds-grid slds-grid_align-spread slds-m-top_x-small">
+            <span class="slds-text-body_regular amount">
+                <template lwc:if={hasAmount}>
+                    <lightning-formatted-number
+                        value={amount}
+                        format-style="currency"
+                        currency-code={currencyCode}
+                        maximum-fraction-digits="0"
+                    ></lightning-formatted-number>
+                </template>
+            </span>
+            <span class={closeDateClass}>
+                <lightning-formatted-date-time
+                    value={closeDate}
+                    year="numeric"
+                    month="short"
+                    day="2-digit"
+                    time-zone="UTC"
+                ></lightning-formatted-date-time>
+            </span>
+        </div>
+        <p class="slds-text-body_small slds-text-color_weak slds-truncate owner-name">
+            {ownerName}
+        </p>
+    </div>
+</template>

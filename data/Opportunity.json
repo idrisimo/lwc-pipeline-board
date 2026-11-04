@@ -1,0 +1,169 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef1"
+      },
+      "Name": "Acme Renewal",
+      "AccountId": "@AccountRef1",
+      "StageName": "Prospecting",
+      "Amount": 12000,
+      "CloseDate": "2026-11-24"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef2"
+      },
+      "Name": "Acme Expansion",
+      "AccountId": "@AccountRef1",
+      "StageName": "Qualification",
+      "Amount": 45000,
+      "CloseDate": "2026-12-19"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef3"
+      },
+      "Name": "Acme Support Plan",
+      "AccountId": "@AccountRef1",
+      "StageName": "Closed Won",
+      "Amount": 9000,
+      "CloseDate": "2026-10-25"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef4"
+      },
+      "Name": "Globex Platform",
+      "AccountId": "@AccountRef2",
+      "StageName": "Needs Analysis",
+      "Amount": 80000,
+      "CloseDate": "2027-01-03"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef5"
+      },
+      "Name": "Globex Analytics Add-on",
+      "AccountId": "@AccountRef2",
+      "StageName": "Value Proposition",
+      "Amount": 22000,
+      "CloseDate": "2026-12-09"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef6"
+      },
+      "Name": "Globex Migration",
+      "AccountId": "@AccountRef2",
+      "StageName": "Proposal/Price Quote",
+      "Amount": 64000,
+      "CloseDate": "2026-11-29"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef7"
+      },
+      "Name": "Initech TPS Reports",
+      "AccountId": "@AccountRef3",
+      "StageName": "Prospecting",
+      "Amount": 5000,
+      "CloseDate": "2026-11-19"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef8"
+      },
+      "Name": "Initech Cloud Move",
+      "AccountId": "@AccountRef3",
+      "StageName": "Id. Decision Makers",
+      "Amount": 38000,
+      "CloseDate": "2026-12-24"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef9"
+      },
+      "Name": "Initech Training",
+      "AccountId": "@AccountRef3",
+      "StageName": "Closed Lost",
+      "Amount": 7000,
+      "CloseDate": "2026-10-15"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef10"
+      },
+      "Name": "Umbrella Compliance Suite",
+      "AccountId": "@AccountRef4",
+      "StageName": "Perception Analysis",
+      "Amount": 91000,
+      "CloseDate": "2027-01-13"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef11"
+      },
+      "Name": "Umbrella Lab Tooling",
+      "AccountId": "@AccountRef4",
+      "StageName": "Negotiation/Review",
+      "Amount": 120000,
+      "CloseDate": "2026-11-16"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef12"
+      },
+      "Name": "Umbrella Pilot",
+      "AccountId": "@AccountRef4",
+      "StageName": "Qualification",
+      "Amount": 15000,
+      "CloseDate": "2026-12-04"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef13"
+      },
+      "Name": "Stark Arc Reactor License",
+      "AccountId": "@AccountRef5",
+      "StageName": "Proposal/Price Quote",
+      "Amount": 250000,
+      "CloseDate": "2026-12-14"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef14"
+      },
+      "Name": "Stark Fleet Upgrade",
+      "AccountId": "@AccountRef5",
+      "StageName": "Negotiation/Review",
+      "Amount": 175000,
+      "CloseDate": "2026-11-22"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "OppRef15"
+      },
+      "Name": "Stark Pilot Program",
+      "AccountId": "@AccountRef5",
+      "StageName": "Closed Won",
+      "Amount": 30000,
+      "CloseDate": "2026-11-01"
+    }
+  ]
+}

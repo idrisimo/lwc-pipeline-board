@@ -1,0 +1,46 @@
+<template>
+    <section
+        class={columnClass}
+        data-stage={stage}
+        ondragover={handleDragOver}
+        ondragenter={handleDragOver}
+        ondragleave={handleDragLeave}
+        ondrop={handleDrop}
+    >
+        <header class="slds-p-around_small slds-border_bottom column-header">
+            <h2 class="slds-text-heading_small slds-truncate" title={stage}>{stage}</h2>
+            <p class="slds-text-body_small slds-text-color_weak">
+                <span class="count">{totalCount}</span>
+                <span class="slds-m-horizontal_xx-small">|</span>
+                <lightning-formatted-number
+                    class="total"
+                    value={totalAmount}
+                    format-style="currency"
+                    currency-code={currencyCode}
+                    maximum-fraction-digits="0"
+                ></lightning-formatted-number>
+            </p>
+        </header>
+        <div class="slds-p-around_x-small cards">
+            <template for:each={visibleCards} for:item="card">
+                <c-pipeline-card
+                    key={card.Id}
+                    record={card}
+                    onselect={handleCardSelect}
+                ></c-pipeline-card>
+            </template>
+            <template lwc:if={isEmpty}>
+                <p class="slds-text-color_weak slds-text-align_center slds-p-around_small empty">
+                    No opportunities
+                </p>
+            </template>
+            <template lwc:if={hasHiddenCards}>
+                <p
+                    class="slds-text-color_weak slds-text-align_center slds-p-around_x-small hidden-note"
+                >
+                    +{hiddenCount} more not shown
+                </p>
+            </template>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,13 @@
+.card {
+    cursor: grab;
+    margin-bottom: 0.5rem;
+}
+
+.card:hover,
+.card:focus {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card_dragging {
+    opacity: 0.4;
+}

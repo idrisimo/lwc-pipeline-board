@@ -1,0 +1,13 @@
+{
+    "trailingComma": "none",
+    "singleQuote": true,
+    "printWidth": 100,
+    "tabWidth": 4,
+    "plugins": ["prettier-plugin-apex", "@prettier/plugin-xml"],
+    "overrides": [
+        { "files": "**/*.{cls,trigger}", "options": { "parser": "apex" } },
+        { "files": "**/lwc/**/*.html", "options": { "parser": "lwc" } },
+        { "files": "**/*.{xml}", "options": { "parser": "xml" } },
+        { "files": "*.{yml,yaml,json,md}", "options": { "tabWidth": 2 } }
+    ]
+}
